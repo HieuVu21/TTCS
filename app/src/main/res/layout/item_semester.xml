@@ -1,0 +1,32 @@
+<!-- res/layout/item_semester.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- Display Semester Number and Academic Year -->
+    <TextView
+        android:id="@+id/semesterTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Semester Title"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <!-- Display Semester GPA -->
+    <TextView
+        android:id="@+id/semesterGpaTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Semester GPA"
+        android:textSize="14sp"
+        android:paddingBottom="8dp" />
+
+    <!-- RecyclerView for Course Details in Semester -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/courseRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

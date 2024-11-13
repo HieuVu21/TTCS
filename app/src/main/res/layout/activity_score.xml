@@ -1,0 +1,32 @@
+<!-- res/layout/activity_score.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Display Current GPA -->
+    <TextView
+        android:id="@+id/currentGpaTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current GPA"
+        android:textSize="18sp"
+        android:paddingBottom="8dp" />
+
+    <!-- Display Predicted GPA -->
+    <TextView
+        android:id="@+id/predictedGpaTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Predicted Next Semester GPA"
+        android:textSize="18sp"
+        android:paddingBottom="16dp" />
+
+    <!-- RecyclerView for Semester Details -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/semesterRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
