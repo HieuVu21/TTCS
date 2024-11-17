@@ -50,6 +50,20 @@ android {
 }
 
 dependencies {
+
+    //layout
+    implementation ("com.google.android.material:material:1.9.0")
+    implementation ("androidx.cardview:cardview:1.0.0")
+
+//    implementation ("io.github.patrykandpatrick:vico-compose:1.8.0")
+//    implementation ("androidx.compose.material3:material3:1.2.0-alpha05")
+////    implementation ("io.github.patrykandpatrick:vico-compose:1.7.0")
+//    implementation ("com.patrykandpatrick.vico:compose:1.6.5")
+    implementation ("com.patrykandpatrick.vico:compose:1.6.5")
+    implementation ("com.patrykandpatrick.vico:compose-m3:1.6.5")
+    implementation ("com.patrykandpatrick.vico:core:1.6.5")
+    implementation ("androidx.compose.material3:material3:1.1.2")
+    implementation ("androidx.activity:activity-compose:1.7.2")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("androidx.cardview:cardview:1.0.0")

@@ -6,11 +6,11 @@ import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
 
-// Define data classes for request and response
 data class LoginRequest(
     val student_id: String,
     val password: String
 )
+
 data class GpaResponse(
     val current_gpa: Double,
     val predicted_next_semester_gpa: Double,
@@ -36,21 +36,15 @@ data class CourseResult(
 data class ComponentScore(
     val name: String,
     val score_weight: Double,
-    val score: Int
+    val score: Double  // Changed from Int to Double
 )
 
+data class LoginResponse(val token: String)
 
-
-data class LoginResponse(val token: String)  // Adjust fields as per API response
-
-// Define the API interface
 interface AuthApi {
-    @POST("/auth/login") // replace with your actual endpoint if different
+    @POST("/auth/login")
     fun login(@Body request: LoginRequest): Call<LoginResponse>
 
     @GET("/gpa/detail")
     fun getGpaDetail(@Header("Authorization") token: String): Call<GpaResponse>
-
-
 }
-

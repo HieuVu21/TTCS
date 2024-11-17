@@ -27,6 +27,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".ScoreActivity" />
+        <activity
+            android:name=".GpaChartActivity"
+            android:exported="false"
+            android:label="GPA Chart" />
 
     </application>
 
