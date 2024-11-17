@@ -10,6 +10,8 @@ import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.formatter.ValueFormatter
+import com.github.mikephil.charting.highlight.Highlight
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener
 
 class GpaChartActivity : ComponentActivity() {
 
@@ -37,7 +39,7 @@ class GpaChartActivity : ComponentActivity() {
 
         val lineDataSet = LineDataSet(entries, "GPA Over Semesters").apply {
             color = resources.getColor(R.color.red, theme)
-            valueTextColor = resources.getColor(R.color.black, theme)
+            valueTextColor = android.graphics.Color.TRANSPARENT // Ẩn điểm GPA lúc đầu
             lineWidth = 2f
             setDrawCircles(true)
             circleRadius = 5f
@@ -59,16 +61,35 @@ class GpaChartActivity : ComponentActivity() {
         }
 
         lineChart.axisLeft.apply {
-            axisMinimum = 2.5f
-            axisMaximum = 3.2f
+            axisMinimum = 2.4f
+            axisMaximum = 4.0f
+            granularity = 0.4f
             setDrawGridLines(true)
         }
         lineChart.axisRight.isEnabled = false
+
+        // Thêm khoảng cách giữa biểu đồ và các cạnh để dễ nhìn hơn
+        lineChart.setExtraOffsets(10f, 10f, 10f, 20f)
 
         lineChart.description = Description().apply { text = "" }
         lineChart.setTouchEnabled(true)
         lineChart.setPinchZoom(true)
         lineChart.animateX(1000)
+
+        // Sự kiện khi bấm vào điểm trên biểu đồ
+        lineChart.setOnChartValueSelectedListener(object : OnChartValueSelectedListener {
+            override fun onValueSelected(e: Entry?, h: Highlight?) {
+                e?.let {
+                    lineDataSet.valueTextColor = resources.getColor(R.color.black, theme) // Hiện điểm GPA
+                    lineChart.invalidate() // Cập nhật lại biểu đồ
+                }
+            }
+
+            override fun onNothingSelected() {
+                lineDataSet.valueTextColor = android.graphics.Color.TRANSPARENT // Ẩn điểm GPA khi không chọn
+                lineChart.invalidate() // Cập nhật lại biểu đồ
+            }
+        })
     }
 
     class XAxisFormatter : ValueFormatter() {
