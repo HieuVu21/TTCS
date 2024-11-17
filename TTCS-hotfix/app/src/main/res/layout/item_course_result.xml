@@ -1,0 +1,58 @@
+<!-- res/layout/item_course.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="#f9f9f9"
+    android:layout_marginBottom="4dp">
+
+    <!-- Display Course Name -->
+    <TextView
+        android:id="@+id/courseNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Course Name"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <!-- Display Course Credits -->
+    <TextView
+        android:id="@+id/courseCreditsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Credits"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="14sp" />
+
+    <!-- Display GPA on 4.0 Scale -->
+    <TextView
+        android:id="@+id/courseGpa4TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GPA (4 Scale)"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="14sp" />
+
+    <!-- Display GPA on 10 Scale -->
+    <TextView
+        android:id="@+id/courseGpa10TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GPA (10 Scale)"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:paddingBottom="8dp" />
+
+    <!-- Container for Course Components -->
+    <LinearLayout
+        android:id="@+id/componentsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+</LinearLayout>
